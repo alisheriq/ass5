@@ -8,6 +8,9 @@ public class Main {
         bst.put(8, "Sample5");
         bst.put(13, "Sample6");
         bst.put(18, "Sample7");
+        bst.delete(10);
+        bst.delete(8);
+        bst.delete(18);
         System.out.println(bst.get(10));
         System.out.println(bst.get(5));
         System.out.println(bst.get(15));
