@@ -16,16 +16,21 @@ BST class
 This is a Java implementation of a Binary Search Tree (BST) data structure. A BST is a tree-based data structure in which each node has a key and an associated value. The keys in a BST are stored in a particular order that allows for efficient searching, insertion, and deletion operations.
 ---
 Class: BST<K extends Comparable<K>, V>
+  
 This class represents the Binary Search Tree.
 
--Constructors
+-Constructors:
+  
 BST(): Constructs an empty Binary Search Tree.
 
--Fields
+-Fields:
+  
 private Node root: The root node of the binary search tree.
+  
 private int size: The number of nodes in the binary search tree.
 
--Methods
+-Methods:
+  
 public void put(K key, V val): Inserts a key-value pair into the binary search tree.
   
 private Node put(Node current, K key, V val): Recursive method to insert a key-value pair into the binary search tree.
@@ -47,28 +52,39 @@ public Iterable<KeyValue<K, V>> iterator(): Returns an iterable collection of ke
 private void inorderTraversal(Node node, List<KeyValue<K, V>> keyValues): Performs an inorder traversal of the binary search tree and collects key-value pairs.
   
 -Inner Class: Node
+  
 This class represents a node in the Binary Search Tree.
 
--Fields
+-Fields:
+  
 private K key: The key of the node.
+  
 private V val: The value associated with the key.
+  
 private Node left: The left child node.
+  
 private Node right: The right child node.
   
--Constructors
+-Constructors:
+  
 public Node(K key, V val): Constructs a node with the given key and value.
   
 -Inner Class: KeyValue<K, V>
+  
 This class represents a key-value pair in the Binary Search Tree.
 
--Fields
+-Fields:
+  
 private K key: The key of the key-value pair.
+  
 private V value: The value associated with the key.
   
--Constructors
+-Constructors:
+  
 public KeyValue(K key, V value): Constructs a key-value pair with the given key and value.
   
-Methods
+Methods:
+  
 public K getKey(): Returns the key of the key-value pair.
   
 public V getValue(): Returns the value associated with the key-value pair.
