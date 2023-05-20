@@ -109,6 +109,13 @@ public class BST <K extends Comparable<K>,V> {
             this.value = value;
         }
 
+        public K getKey() {
+            return key;
+        }
+
+        public V getValue() {
+            return value;
+        }
 
     }
 }
