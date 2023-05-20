@@ -32,4 +32,17 @@ public class BST <K extends Comparable<K>,V> {
         }
         return current;
     }
+    private Node get(Node current, K key) {
+        if (current == null || key.equals(current.key)) {
+            return current;
+        }
+
+        int cmp = key.compareTo(current.key);
+        if (cmp < 0) {
+            return get(current.left, key);
+        } else {
+            return get(current.right, key);
+        }
+    }
+
 }
