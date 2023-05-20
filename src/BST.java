@@ -77,5 +77,10 @@ public class BST <K extends Comparable<K>,V> {
         }
         return current;
     }
-
+    private Node findMinNode(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        return findMinNode(node.left);
+    }
 }
