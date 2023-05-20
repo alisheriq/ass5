@@ -147,29 +147,49 @@ public class BST <K extends Comparable<K>,V> {
      */
     public Iterable<KeyValue<K, V>> iterator() {
         List<KeyValue<K, V>> keyValues = new ArrayList<>();
-        inorderTraversal(root, keyValues);
+        inorderTraversal(root, keyValues); // Perform inorder traversal to collect key-value pairs
         return keyValues;
     }
+    /**
+     * Performs an inorder traversal of the binary search tree and collects key-value pairs.
+     *
+     * @param node       The current node being visited
+     * @param keyValues  The list to store key-value pairs
+     */
     private void inorderTraversal(Node node, List<KeyValue<K, V>> keyValues) {
         if (node != null) {
-            inorderTraversal(node.left, keyValues);
-            keyValues.add(new KeyValue<>(node.key, node.val));
-            inorderTraversal(node.right, keyValues);
+            inorderTraversal(node.left, keyValues); // Recursively traverse the left subtree
+            keyValues.add(new KeyValue<>(node.key, node.val)); // Add the key-value pair to the list
+            inorderTraversal(node.right, keyValues); // Recursively traverse the right subtree
         }
     }
+    /**
+     * Represents a key-value pair in the binary search tree.
+     *
+     * @param <K> The type of the key
+     * @param <V> The type of the value
+     */
     public class KeyValue<K, V> {
-        private K key;
-        private V value;
+        private K key; // Key of the pair
+        private V value; // Value associated with the key
 
         public KeyValue(K key, V value) {
             this.key = key;
             this.value = value;
         }
-
+        /**
+         * Returns the key of the key-value pair.
+         *
+         * @return The key
+         */
         public K getKey() {
             return key;
         }
-
+        /**
+         * Returns the value associated with the key-value pair.
+         *
+         * @return The value
+         */
         public V getValue() {
             return value;
         }
