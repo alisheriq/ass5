@@ -48,6 +48,9 @@ public class BST <K extends Comparable<K>,V> {
             return get(current.right, key);
         }
     }
+    public void delete(K key) {
+        root = delete(root, key);
+    }
     private Node delete(Node current, K key) {
         if (current == null) {
             return null;
