@@ -88,16 +88,27 @@ public class BST <K extends Comparable<K>,V> {
     public int size() {
         return size;
     }
-    public Iterable<K> iterator() {
-        List<K> keys = new ArrayList<>();
-        inorderTraversal(root, keys);
-        return keys;
+    public Iterable<KeyValue<K, V>> iterator() {
+        List<KeyValue<K, V>> keyValues = new ArrayList<>();
+        inorderTraversal(root, keyValues);
+        return keyValues;
     }
-    private void inorderTraversal(Node node, List<K> keys) {
+    private void inorderTraversal(Node node, List<KeyValue<K, V>> keyValues) {
         if (node != null) {
-            inorderTraversal(node.left, keys);
-            keys.add(node.key);
-            inorderTraversal(node.right, keys);
+            inorderTraversal(node.left, keyValues);
+            keyValues.add(new KeyValue<>(node.key, node.val));
+            inorderTraversal(node.right, keyValues);
         }
+    }
+    public class KeyValue<K, V> {
+        private K key;
+        private V value;
+
+        public KeyValue(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+
     }
 }
