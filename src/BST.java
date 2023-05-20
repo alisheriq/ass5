@@ -13,6 +13,9 @@ public class BST <K extends Comparable<K>,V> {
             left = right = null;
         }
     }
+    public void put(K key, V val) {
+        root = put(root, key, val);
+    }
     private Node put(Node current, K key, V val) {
         if (current == null) {
             size++;
