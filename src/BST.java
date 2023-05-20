@@ -83,4 +83,7 @@ public class BST <K extends Comparable<K>,V> {
         }
         return findMinNode(node.left);
     }
+    public int size() {
+        return size;
+    }
 }
