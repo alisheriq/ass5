@@ -11,8 +11,8 @@
 IntelliJ IDEA
 - I used v2022.3.1
 ## Explanation of the Assignment 5
-<details>
-<summary>BST class</summary>
+BST class
+
 This is a Java implementation of a Binary Search Tree (BST) data structure. A BST is a tree-based data structure in which each node has a key and an associated value. The keys in a BST are stored in a particular order that allows for efficient searching, insertion, and deletion operations.
 ---
 Class: BST<K extends Comparable<K>, V>
@@ -72,4 +72,16 @@ Methods
 public K getKey(): Returns the key of the key-value pair.
   
 public V getValue(): Returns the value associated with the key-value pair.
-  </details>
+
+This code provides a basic implementation of a Binary Search Tree with key-value pair functionality. It allows for efficient insertion, deletion, and searching operations. The implementation also provides an iterator to iterate over the key-value pairs in the tree.
+
+## Install
+ Copy the code from Main.java file to your project.  
+ **IMPORTANT:** You will need to remove the comments to run the code.
+
+## Download
+Compiled binary material can be found at [releases](https://github.com/alisheriq/assignment4/tree/master/src).
+
+## License
+Majority of the source code is written by myself.
+Any use of code without my permission is prohibited.
