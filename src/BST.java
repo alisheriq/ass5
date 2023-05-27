@@ -77,6 +77,24 @@ public class BST <K extends Comparable<K>,V> {
             return get(current.right, key); // Recursively search in the right subtree
         }
     }
+    public boolean consist(K key) {
+        boolean check = consist(root, key);
+        return check;
+    }
+    private boolean consist(Node current, K key) {
+        if (current == null) {
+            return false;
+        }
+        else if (key.equals(current.key)) {
+            return true;
+        }
+        int cmp = key.compareTo(current.key);
+        if (cmp < 0) {
+            return consist(current.left, key); // Recursively search in the left subtree
+        } else {
+            return consist(current.right, key); // Recursively search in the right subtree
+        }
+    }
     /**
      * Deletes a key and its associated value from the binary search tree.
      *
@@ -95,9 +113,7 @@ public class BST <K extends Comparable<K>,V> {
     private Node delete(Node current, K key) {
         if (current == null) {
             return null; // Return null if the key is not found
-
         }
-
         int cmp = key.compareTo(current.key);
         if (cmp < 0) {
             current.left = delete(current.left, key); // Recursively delete from the left subtree
